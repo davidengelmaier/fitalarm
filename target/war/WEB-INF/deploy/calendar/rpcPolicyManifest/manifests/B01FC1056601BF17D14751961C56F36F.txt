@@ -1,0 +1,2 @@
+serviceClass: com.google.api.services.samples.calendar.appengine.client.CalendarService
+path: 968DA0F41A8CD41D970C46AFF1EEACB8.gwt.rpc

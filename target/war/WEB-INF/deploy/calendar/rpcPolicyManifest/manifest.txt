@@ -1,0 +1,3 @@
+# Module calendar
+# RPC service class, partial path of RPC policy file
+com.google.api.services.samples.calendar.appengine.client.CalendarService, 968DA0F41A8CD41D970C46AFF1EEACB8.gwt.rpc

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Fit Alarm Administration</title>
+</head>
+<body>
+    <script type="application/javascript">
+        function setAlarmPrefix(value) {
+            alert(value);
+            var http = new XMLHttpRequest();
+            http.open("");
+        }
+    </script>
+    <div style="align-content: stretch; width: 300px;">
+        <div>
+            Please choose alarm prefix
+        </div>
+        <div>
+            <input id="alarmPrefixText" type="text">
+        </div>
+        <div width="100px">
+            <button type="button" style="width: 100px;" onclick="setAlarmPrefix(alarmPrefixText.value);">Submit</button>
+        </div>
+    </div>
+</body>
+</html>
