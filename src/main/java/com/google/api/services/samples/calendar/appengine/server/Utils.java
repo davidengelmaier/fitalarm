@@ -40,7 +40,7 @@ import javax.servlet.http.HttpServletRequest;
  *
  * @author Yaniv Inbar
  */
-class Utils {
+public class Utils {
 
   /**
    * Global instance of the {@link DataStoreFactory}. The best practice is to make it a single
@@ -57,7 +57,7 @@ class Utils {
 
   private static GoogleClientSecrets clientSecrets = null;
 
-  static GoogleClientSecrets getClientCredential() throws IOException {
+  public static GoogleClientSecrets getClientCredential() throws IOException {
     if (clientSecrets == null) {
       clientSecrets = GoogleClientSecrets.load(JSON_FACTORY,
           new InputStreamReader(Utils.class.getResourceAsStream("/client_secrets.json")));
@@ -69,19 +69,19 @@ class Utils {
     return clientSecrets;
   }
 
-  static String getRedirectUri(HttpServletRequest req) {
+  public static String getRedirectUri(HttpServletRequest req) {
     GenericUrl url = new GenericUrl(req.getRequestURL().toString());
     url.setRawPath("/oauth2callback");
     return url.build();
   }
 
-  static GoogleAuthorizationCodeFlow newFlow() throws IOException {
+  public static GoogleAuthorizationCodeFlow newFlow() throws IOException {
     return new GoogleAuthorizationCodeFlow.Builder(HTTP_TRANSPORT, JSON_FACTORY,
-        getClientCredential(), Collections.singleton(CalendarScopes.CALENDAR)).setDataStoreFactory(
+        getClientCredential(), Collections.singleton(CalendarScopes.CALENDAR_READONLY)).setDataStoreFactory(
         DATA_STORE_FACTORY).setAccessType("offline").build();
   }
 
-  static Calendar loadCalendarClient() throws IOException {
+  public static Calendar loadCalendarClient() throws IOException {
     String userId = UserServiceFactory.getUserService().getCurrentUser().getUserId();
     Credential credential = newFlow().loadCredential(userId);
     return new Calendar.Builder(HTTP_TRANSPORT, JSON_FACTORY, credential).build();

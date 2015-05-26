@@ -1,78 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns="http://java.sun.com/xml/ns/javaee"
-         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+		 xmlns="http://java.sun.com/xml/ns/javaee"
+		 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
-         version="2.5">
+		 version="2.5">
 
   <servlet>
-    <servlet-name>oauth2Callback</servlet-name>
-    <servlet-class>com.google.api.services.samples.calendar.appengine.server.OAuth2Callback</servlet-class>
+	<servlet-name>oauth2Callback</servlet-name>
+	<servlet-class>com.google.api.services.samples.calendar.appengine.server.OAuth2Callback</servlet-class>
   </servlet>
 
   <servlet-mapping>
-    <servlet-name>oauth2Callback</servlet-name>
-    <url-pattern>/oauth2callback/*</url-pattern>
+	<servlet-name>oauth2Callback</servlet-name>
+	<url-pattern>/oauth2callback/*</url-pattern>
   </servlet-mapping>
 
   <servlet>
-    <servlet-name>calendarServiceServlet</servlet-name>
-    <servlet-class>com.google.api.services.samples.calendar.appengine.server.CalendarGwtRpcSample</servlet-class>
+	<servlet-name>calendarServiceServlet</servlet-name>
+	<servlet-class>com.google.api.services.samples.calendar.appengine.server.CalendarGwtRpcSample</servlet-class>
   </servlet>
 
   <servlet>
-    <servlet-name>sample</servlet-name>
-    <servlet-class>com.google.api.services.samples.calendar.appengine.server.CalendarAppEngineSample</servlet-class>
+	<servlet-name>sample</servlet-name>
+	<servlet-class>com.google.api.services.samples.calendar.appengine.server.CalendarAppEngineSample</servlet-class>
   </servlet>
 
   <servlet>
-    <servlet-name>listEvents</servlet-name>
-    <servlet-class>com.google.api.services.samples.calendar.appengine.server.ListEvents</servlet-class>
+	<servlet-name>listEvents</servlet-name>
+	<servlet-class>com.google.api.services.samples.calendar.appengine.server.ListEvents</servlet-class>
   </servlet>
 
-    <servlet>
-        <servlet-name>FitbitApiAuthExampleServlet</servlet-name>
-    <servlet-class>com.fitbit.web.FitbitApiAuthExampleServlet</servlet-class>
-    <load-on-startup>1</load-on-startup>
-        </servlet>
-    <servlet-mapping>
-    <servlet-name>FitbitApiAuthExampleServlet</servlet-name>
-        <url-pattern>/fitbitApiAuthExample</url-pattern>
-    </servlet-mapping>
+  <servlet>
+	<servlet-name>AdminServlet</servlet-name>
+	<servlet-class>com.fitbit.web.AdminServlet</servlet-class>
+  </servlet>
 
-    <servlet>
-        <servlet-name>FitbitApiAuthExampleServletRoot</servlet-name>
-        <servlet-class>com.fitbit.web.FitbitApiAuthExampleServlet</servlet-class>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>FitbitApiAuthExampleServletRoot</servlet-name>
-        <url-pattern>/</url-pattern>
-    </servlet-mapping>
-
+  <servlet>
+	<servlet-name>FitbitApiAuthExampleServlet</servlet-name>
+	<servlet-class>com.fitbit.web.FitbitApiAuthExampleServlet</servlet-class>
+	<load-on-startup>1</load-on-startup>
+  </servlet>
   <servlet-mapping>
-    <servlet-name>calendarServiceServlet</servlet-name>
-    <url-pattern>/calendar/calendarService</url-pattern>
+	<servlet-name>FitbitApiAuthExampleServlet</servlet-name>
+	<url-pattern>/fitbitApiAuthExample</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+	<servlet-name>FitbitApiAuthExampleServletRoot</servlet-name>
+	<servlet-class>com.fitbit.web.FitbitApiAuthExampleServlet</servlet-class>
+	<load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>FitbitApiAuthExampleServletRoot</servlet-name>
+	<url-pattern>/</url-pattern>
   </servlet-mapping>
 
   <servlet-mapping>
-    <servlet-name>sample</servlet-name>
-    <url-pattern>/</url-pattern>
+	<servlet-name>calendarServiceServlet</servlet-name>
+	<url-pattern>/calendar/calendarService</url-pattern>
+  </servlet-mapping>
+
+  <!--<servlet-mapping>
+	<servlet-name>sample</servlet-name>
+	<url-pattern>/</url-pattern>
+  </servlet-mapping>-->
+
+  <servlet-mapping>
+	<servlet-name>listEvents</servlet-name>
+	<url-pattern>/calendar/listEvents</url-pattern>
   </servlet-mapping>
 
   <servlet-mapping>
-    <servlet-name>listEvents</servlet-name>
-    <url-pattern>/calendar/listEvents</url-pattern>
+	<servlet-name>AdminServlet</servlet-name>
+	<url-pattern>/</url-pattern>
   </servlet-mapping>
 
   <security-constraint>
-    <web-resource-collection>
-      <web-resource-name>any</web-resource-name>
-      <url-pattern>/*</url-pattern>
-    </web-resource-collection>
-    <auth-constraint>
-      <role-name>*</role-name>
-    </auth-constraint>
+	<web-resource-collection>
+	  <web-resource-name>any</web-resource-name>
+	  <url-pattern>/*</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+	  <role-name>*</role-name>
+	</auth-constraint>
   </security-constraint>
 
 </web-app>
