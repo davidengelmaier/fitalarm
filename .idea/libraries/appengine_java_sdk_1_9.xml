@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="appengine-java-sdk-1.9">
+    <CLASSES>
+      <root url="file:///Applications/appengine-java-sdk-1.9.17" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="file:///Applications/appengine-java-sdk-1.9.17/docs/endpoints/javadoc" />
+      <root url="file:///Applications/appengine-java-sdk-1.9.17/docs/javadoc" />
+      <root url="file:///Applications/appengine-java-sdk-1.9.17/docs/remoteapi/javadoc" />
+      <root url="file:///Applications/appengine-java-sdk-1.9.17/docs/spi/javadoc" />
+      <root url="file:///Applications/appengine-java-sdk-1.9.17/docs/testing/javadoc" />
+      <root url="file:///Applications/appengine-java-sdk-1.9.17/docs/tools/javadoc" />
+    </JAVADOC>
+    <SOURCES />
+  </library>
+</component>

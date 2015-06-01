@@ -13,7 +13,8 @@
     </facet>
     <facet type="google-app-engine" name="Google App Engine">
       <configuration>
-        <sdk-home-path>$MAVEN_REPOSITORY$/com/google/appengine/appengine-java-sdk/1.8.3/appengine-java-sdk/appengine-java-sdk-1.8.3</sdk-home-path>
+        <sdk-home-path>/Applications/appengine-java-sdk-1.9.17</sdk-home-path>
+        <persistence-api>JDO3</persistence-api>
       </configuration>
     </facet>
     <facet type="gwt" name="GWT">
@@ -112,5 +113,6 @@
     <orderEntry type="library" name="Maven: net.sf.jsr107cache:jsr107cache:1.1" level="project" />
     <orderEntry type="library" name="Maven: javax.jdo:jdo2-api:2.3-eb" level="project" />
     <orderEntry type="library" name="Maven: javax.transaction:transaction-api:1.1" level="project" />
+    <orderEntry type="library" name="appengine-java-sdk-1.9" level="project" />
   </component>
 </module>

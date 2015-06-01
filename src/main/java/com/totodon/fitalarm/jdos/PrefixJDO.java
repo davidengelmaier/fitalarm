@@ -2,14 +2,14 @@ package com.totodon.fitalarm.jdos;
 
 import com.totodon.molitan.jdos.IJDO;
 
-import javax.jdo.annotations.IdGeneratorStrategy;
-import javax.jdo.annotations.Persistent;
-import javax.jdo.annotations.PrimaryKey;
+import javax.jdo.annotations.*;
 import java.io.Serializable;
 
 /**
  * Created by davidengelmaier on 26/05/15.
  */
+@SuppressWarnings("serial")
+@PersistenceCapable(identityType = IdentityType.APPLICATION)
 public class PrefixJDO implements IJDO, Serializable {
 
     @PrimaryKey
